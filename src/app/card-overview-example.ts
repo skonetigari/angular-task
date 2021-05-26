@@ -67,6 +67,7 @@ export class CardOverviewExample {
     this.filterData = Object.assign([], this.rowData);
   }
   filterDataEvt(evt: any) {
+    this.name = evt;
     let searchValue = evt;
     this.filterData = this.rowData.filter((item: any) => {
       return item.category.toLowerCase().includes(searchValue.toLowerCase());

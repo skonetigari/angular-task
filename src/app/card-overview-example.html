@@ -4,11 +4,12 @@
 
   <div class="sidenav">
     <nav id="menu" class="menu">
-      <li><a (click)="filterDataEvt(null)">All</a></li>
-      <li><a (click)="filterDataEvt('financial')">Financial</a></li>
-      <li><a (click)="filterDataEvt('technical')">Technical</a></li>
-      <li><a (click)="filterDataEvt('marketing')">Marketing</a></li>
-      <li><a (click)="filterDataEvt('human resources')">Human Resources</a></li>
+      <li [ngClass]="{'active':name==null}"><a (click)="filterDataEvt(null)">All</a></li>
+      <li [ngClass]="{'active':name=='financial'}"><a (click)="filterDataEvt('financial')">Financial</a></li>
+      <li [ngClass]="{'active':name=='technical'}"><a (click)="filterDataEvt('technical')">Technical</a></li>
+      <li [ngClass]="{'active':name=='marketing'}"><a (click)="filterDataEvt('marketing')">Marketing</a></li>
+      <li [ngClass]="{'active':name=='human resources'}"><a (click)="filterDataEvt('human resources')">Human
+          Resources</a></li>
     </nav>
   </div>
   <div class="mainContent">
