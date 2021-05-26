@@ -1,37 +1,37 @@
-
 <div class="documents">Documents</div>
-  <div class="search">Search document or select category</div>
+<div class="search">Search document or select category</div>
 <div class="container">
-  
+
   <div class="sidenav">
-    <nav id="menu" class="menu"> 
+    <nav id="menu" class="menu">
       <li><a (click)="filterDataEvt(null)">All</a></li>
-      <li><a (click)="filterDataEvt(null)">News</a></li>
-      <li><a (click)="filterDataEvt(null)">News</a></li>
-      <li><a (click)="filterDataEvt(null)">News</a></li>
-      <li><a (click)="filterDataEvt(null)">News</a></li>
+      <li><a (click)="filterDataEvt('financial')">Financial</a></li>
+      <li><a (click)="filterDataEvt('technical')">Technical</a></li>
+      <li><a (click)="filterDataEvt('marketing')">Marketing</a></li>
+      <li><a (click)="filterDataEvt('human resources')">Human Resources</a></li>
     </nav>
   </div>
   <div class="mainContent">
     <mat-form-field appearance="outline" class="example-form-field">
-  
-      <input matInput #myInput type="text" placeholder="Start typing document name..." [(ngModel)]="name" (input)="filterDataEvt(myInput.value)"> 
+
+      <input matInput #myInput type="text" placeholder="Start typing document name..." [(ngModel)]="name" (input)="filterDataEvt(myInput.value)">
       <button mat-button *ngIf="myInput.value" matSuffix mat-icon-button aria-label="Clear" (click)="filterDataEvt(null)">
         <mat-icon>close</mat-icon>
       </button>
     </mat-form-field>
     <div class="card-section">
-    <mat-card class="card-layout" *ngFor="let data of filterData">
-      <mat-card-header class="header-text">
-        <mat-card-title class="category ml-auto" [ngClass]="data.category.toLowerCase()"><span class="category-text">{{data.category}}</span></mat-card-title>
-      </mat-card-header>
-      <mat-card-content class="content">
-        <p class="headerContent">
-        {{data.text}}
-        </p>
-      </mat-card-content>
-    </mat-card>
+      <mat-card class="card-layout" *ngFor="let data of filterData">
+        <mat-card-header class="header-text">
+          <mat-card-title class="category ml-auto" [ngClass]="data.category.toLowerCase()">
+            <span class="category-text">{{data.category}}</span>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="content">
+          <p class="headerContent">
+            {{data.text}}
+          </p>
+        </mat-card-content>
+      </mat-card>
     </div>
   </div>
 </div>
-
